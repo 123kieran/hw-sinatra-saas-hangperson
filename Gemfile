@@ -4,6 +4,10 @@ ruby '2.5.3'
 gem 'sinatra', '>= 2.0.1'
 gem 'sinatra-flash', '0.3.0'
 
+group :development do
+  gem 'rerun'
+end
+
 group :development, :test do
   gem 'cucumber', '2.0.0'
   gem 'cucumber-sinatra', '0.5.0'
