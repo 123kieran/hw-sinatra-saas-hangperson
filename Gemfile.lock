@@ -125,12 +125,12 @@ DEPENDENCIES
   rspec (= 3.3.0)
   rspec-autotest (= 1.0.0)
   simplecov (= 0.16.1)
-  sinatra (>= 2.0.1)
+  sinatra (>= 2.0.2)
   sinatra-flash (= 0.3.0)
   webmock (= 3.3.0)
 
 RUBY VERSION
-   ruby 2.5.3p105
+   ruby 2.4.0p0
 
 BUNDLED WITH
-   1.16.6
+   1.17.3
