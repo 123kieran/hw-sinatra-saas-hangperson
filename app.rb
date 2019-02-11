@@ -3,6 +3,9 @@ require 'sinatra/flash'
 require './lib/hangperson_game.rb'
 
 class HangpersonApp < Sinatra::Base
+  get '/new' do
+    erb :new
+  end
 
   enable :sessions
   register Sinatra::Flash
@@ -19,10 +22,6 @@ class HangpersonApp < Sinatra::Base
   # to help you with the rest of the assignment
   get '/' do
     redirect '/new'
-  end
-  
-  get '/new' do
-    erb :new
   end
   
   post '/create' do
@@ -46,7 +45,7 @@ class HangpersonApp < Sinatra::Base
       elsif guesses_before_guess == @game.guesses
         flash[:message] = "Invalid guess."
       end
-    rescue ArgumentError
+     rescue ArgumentError
       flash[:message] = "Invalid guess."
     end
     redirect '/show'
@@ -58,23 +57,17 @@ class HangpersonApp < Sinatra::Base
   # Notice that the show.erb template expects to use the instance variables
   # wrong_guesses and word_with_guesses from @game.
   get '/show' do
-    case @game.check_win_or_lose
-    when :win
-      redirect '/win'
-    when :lose
-      redirect '/lose'
-    else
-      erb :show # You may change/remove this line
-    end
+    ### YOUR CODE HERE ###
+    erb :show # You may change/remove this line
   end
   
   get '/win' do
-    redirect '/show' if @game.check_win_or_lose == :play
+    ### YOUR CODE HERE ###
     erb :win # You may change/remove this line
   end
   
   get '/lose' do
-    redirect '/show' if @game.check_win_or_lose == :play
+    ### YOUR CODE HERE ###
     erb :lose # You may change/remove this line
   end
   
